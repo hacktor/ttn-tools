@@ -1,7 +1,6 @@
 package main
 
 import (
-    "log"
     "github.com/pelletier/go-toml"
 )
 
@@ -22,7 +21,6 @@ func getConfig(c string) Config {
     }
     t, e := toml.LoadFile(c)
     if e != nil {
-        log.Printf("No configuration: %v\n", e)
         return cfg
     }
 
