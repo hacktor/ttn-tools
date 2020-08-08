@@ -16,6 +16,7 @@ const (
 func main() {
 
     var (
+        conf string
         appID string
         appAccessKey string
         deviceName string
@@ -25,6 +26,7 @@ func main() {
 
     cfg := getConfig("ttn.toml")
 
+    flag.StringVar(&conf, "conf", "ttn.toml", "path to TOML configuration file")
     flag.StringVar(&appID, "appID", cfg.appID, "TTN Application ID")
     flag.StringVar(&appAccessKey, "appAccessKey", cfg.appAccessKey, "Application Access Key")
     flag.StringVar(&deviceName, "deviceName", cfg.deviceName, "Device name")
