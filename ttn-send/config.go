@@ -2,7 +2,6 @@ package main
 
 import (
     "log"
-    "strconv"
     "github.com/pelletier/go-toml"
 )
 
@@ -40,13 +39,7 @@ func getConfig(c string) Config {
     }
 
     if t.Has("devicePort") {
-        port := t.Get("devicePort").(string)
-        devicePort, err := strconv.ParseInt(port, 0, 16)
-        if err != nil {
-            log.Printf("Error decoding devicePort: %v, using default %v\n", err, cfg.devicePort)
-        } else {
-            cfg.devicePort = uint(devicePort)
-        }
+        cfg.devicePort = uint(t.Get("devicePort").(int64))
     }
 
     return cfg

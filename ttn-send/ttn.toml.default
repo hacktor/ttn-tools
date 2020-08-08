@@ -1,0 +1,4 @@
+appID        = 'my-cool-app'
+appAccessKey = 'ttn-account-v2.some-more-or-less-random-string'
+deviceName   = 'my-cool-device'
+devicePort   = 3
